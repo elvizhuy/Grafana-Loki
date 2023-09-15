@@ -2,7 +2,7 @@ groups:
 - name: rate-alerting
   rules:
     - alert: HighLogRate
-      expr: ({job="log-app-ndtp-dev"})
+      expr: count_over_time({job="log-app-ndtp-dev"} | json | line_format "{{.severity}} {{.message}}"  [1s])  
       for: 1m
       labels:
         severity: warning
