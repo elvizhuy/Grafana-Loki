@@ -57,8 +57,8 @@ ruler:
   storage:
     type: local
     local:
-      directory: /etc/loki/rulestorage
-  rule_path: /etc/loki/rules
+      directory: /etc/loki/rules
+  rule_path: /tmp/loki/rules-temp
   alertmanager_url: http://10.0.0.232:9093
   ring:
     kvstore:

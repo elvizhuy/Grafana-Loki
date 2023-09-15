@@ -6,7 +6,7 @@ services:
     container_name: loki-databases
     volumes:
      - ./config/loki-config.yml:/etc/config/loki-config.yml:rw
-     - ./rules/rules.yml:/etc/loki/rules/rules.yml:rw
+     - ./rules/rules.yml:/etc/loki/rules/fake/rules.yml:rw
     entrypoint:
       - /usr/bin/loki
       - -config.file=/etc/config/loki-config.yml
