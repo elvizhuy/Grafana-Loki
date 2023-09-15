@@ -2,7 +2,7 @@ groups:
 - name: rate-alerting
   rules:
     - alert: HighLogRate
-      expr: count_over_time(({job="log-app-ndtp-dev"})[1m]) >=0
+      expr: ({job="log-app-ndtp-dev"}| json | line_format "{{.severity}} {{.message}}")
       for: 1m
       labels:
         severity: warning
@@ -11,19 +11,4 @@ groups:
       annotations:
         summary: Cảnh báo log
         description: "có log {{ $value }} "
-# groups:
-# - name: Container
-#   rules:
-#   - alert: Container Tắt
-#     expr: container_state_status{status='exited'} == 1
-#     for: 10s
-#     labels:
-#       severity: critical
-#       category: container-status
-#       container_name: searching-service
-#     annotations:
-#       summary: Container killed (instance {{ $labels.instance }}  ) {{ $labels.name }}
-#       description: |
-#        Container name:{{ $labels.name }}
-#        A container has disappeared
 
