@@ -6,6 +6,7 @@ groups:
         for: 1m
         labels:
             severity: warning
+            app_type: Server Nội Bộ Isofh
             category: logs
         annotations:
             title: "Alert log"
