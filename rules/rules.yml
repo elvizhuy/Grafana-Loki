@@ -9,8 +9,8 @@ groups:
         app_type: Server Nội Bộ Isofh
         category: logs
       annotations:
-        title: "Alert log"
-        description: "có log"
+        summary: Cảnh báo log
+        description: "có log $value "
 # groups:
 # - name: Container
 #   rules:
