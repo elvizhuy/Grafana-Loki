@@ -10,4 +10,4 @@ groups:
         category: logs
       annotations:
         summary: Cảnh báo log
-        description: "có log {{ $value }} "
+        description: "có log {{ $label.job }} {{ $label.filename }} "
