@@ -2,7 +2,7 @@ groups:
 - name: rate-alerting
   rules:
     - alert: HighLogRate
-      expr: ({job="log-app-ndtp-dev"}| json | line_format "{{.severity}} {{.message}}")
+      expr: count_over_time(({job="log-app-ndtp-dev"})[1m]) >=0
       for: 1m
       labels:
         severity: warning
@@ -11,4 +11,3 @@ groups:
       annotations:
         summary: Cảnh báo log
         description: "có log {{ $value }} "
-
