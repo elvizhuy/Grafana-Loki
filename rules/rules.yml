@@ -2,7 +2,7 @@ groups:
 - name: rate-alerting
   rules:
     - alert: HighLogRate
-      expr: ({job="log-app-ndtp-dev"}| json | line_format "{{.severity}} {{.message}}")
+      expr: ({job="log-app-ndtp-dev"} |~ "Từ khoá cần cảnh báo")
       for: 1m
       labels:
         severity: warning
