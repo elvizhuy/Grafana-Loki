@@ -10,7 +10,7 @@ groups:
         category: logs
       annotations:
         summary: Cảnh báo log
-        description: "có log $value "
+        description: "có log {{ $value }} "
 # groups:
 # - name: Container
 #   rules:
