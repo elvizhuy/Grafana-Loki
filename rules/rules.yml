@@ -2,7 +2,7 @@ groups:
   - name: rate-alerting
     rules:
       - alert: HighLogRate
-        expr: sum by(job) (rate({job="log-app-ndtp-dev"} [1m]))
+        expr: sum by(job) (rate({job="log-app-ndtp-dev"} [1m])) > 0
         for: 1m
         labels:
             severity: warning
