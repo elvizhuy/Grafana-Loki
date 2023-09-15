@@ -3,7 +3,7 @@ groups:
   rules:
     - alert: HighLogRate
       expr: count_over_time(({job="log-app-ndtp-dev"})[1m]) >=0
-      for: 1m
+      for: 10s
       labels:
         severity: warning
         app_type: Server Nội Bộ Isofh
