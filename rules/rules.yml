@@ -1,13 +1,29 @@
 groups:
-  - name: rate-alerting
-    rules:
-      - alert: HighLogRate
-        expr: sum by(job) (rate({job="log-app-ndtp-dev"} [1m])) > 0
-        for: 1m
-        labels:
-            severity: warning
-            app_type: Server Nội Bộ Isofh
-            category: logs
-        annotations:
-            title: "Alert log"
-            description: "có log"
+- name: rate-alerting
+  rules:
+    - alert: HighLogRate
+      expr: sum by(job) (rate({job="log-app-ndtp-dev"} [1m])) > 0
+      for: 1m
+      labels:
+        severity: warning
+        app_type: Server Nội Bộ Isofh
+        category: logs
+      annotations:
+        title: "Alert log"
+        description: "có log"
+# groups:
+# - name: Container
+#   rules:
+#   - alert: Container Tắt
+#     expr: container_state_status{status='exited'} == 1
+#     for: 10s
+#     labels:
+#       severity: critical
+#       category: container-status
+#       container_name: searching-service
+#     annotations:
+#       summary: Container killed (instance {{ $labels.instance }}  ) {{ $labels.name }}
+#       description: |
+#        Container name:{{ $labels.name }}
+#        A container has disappeared
+
