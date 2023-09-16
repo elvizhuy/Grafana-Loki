@@ -7,6 +7,7 @@ services:
     volumes:
      - ./config/loki-config.yml:/etc/config/loki-config.yml:rw
      - ./rules/rules.yml:/etc/loki/rules/fake/rules.yml
+     - ./data/loki/:/tmp/loki/
     entrypoint:
       - /usr/bin/loki
       - -config.file=/etc/config/loki-config.yml
