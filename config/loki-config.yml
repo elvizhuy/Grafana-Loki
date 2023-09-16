@@ -14,7 +14,7 @@ ingester:
   wal:
     dir: "/tmp/wal"
   chunk_idle_period: 1h       # Bất kỳ chunk nào không nhận được nhật ký mới trong thời gian này sẽ bị xóa
-  max_chunk_age: 1h           # Tất cả các chunk sẽ bị xóa khi đạt đến độ tuổi này, mặc định là 1h
+  max_chunk_age: 1h           # Tất cả các chunk sẽ bị xóa khi đạt đến độ tuổi này, mặc định là 1h (lưu trữ)
   chunk_target_size: 1048576  # Loki sẽ cố gắng xây dựng các chunk có kích thước lên tới 1,5 MB, xóa trước nếu đạt chunk_idle_ Period hoặc max_chunk_age trước
   chunk_retain_period: 30s    # Phải lớn hơn bộ đệm đọc chỉ mục TTL nếu sử dụng bộ đệm chỉ mục (Bộ đệm đọc chỉ mục mặc định TTL là 5m)
   max_transfer_retries: 0     # Chuyển đoạn bị vô hiệu hóa

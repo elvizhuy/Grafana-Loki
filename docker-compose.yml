@@ -7,7 +7,7 @@ services:
     volumes:
      - ./config/loki-config.yml:/etc/config/loki-config.yml:rw
      - ./rules/rules.yml:/etc/loki/rules/fake/rules.yml
-     - ./data/loki/:/tmp/loki/
+     - ./data/loki/:/tmp/loki/ #mount thư mục liên quan chunk và index ra ngoài
     entrypoint:
       - /usr/bin/loki
       - -config.file=/etc/config/loki-config.yml
