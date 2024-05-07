@@ -13,3 +13,5 @@ services:
       - -config.file=/etc/config/loki-config.yml
     ports:
       - "3100:3100"    
+
+# docker run -d -v /home/isofh/loki:/mnt/config -v /var/log:/var/log --name promtail grafana/promtail:3.0.0 --config.file=/mnt/config/promtail-config.yaml
